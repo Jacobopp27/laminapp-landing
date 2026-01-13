@@ -3,9 +3,9 @@
 # Script de Deploy para Hostinger VPS
 # Configuración (edita estos valores)
 
-VPS_USER="bahia"  # o el usuario que uses en el VPS
-VPS_HOST="srv1164292"  # Reemplaza con tu IP del VPS o dominio
-VPS_PATH="/home/bahia/apps/laminapp-landing"  # Ruta donde quieres el sitio
+VPS_USER="bahia"
+VPS_HOST="72.61.71.132"  # IP del VPS Hostinger
+VPS_PATH="/home/bahia/apps/laminapp-landing"
 REPO_URL="https://github.com/Jacobopp27/laminapp-landing.git"
 BRANCH="main"
 
@@ -38,8 +38,7 @@ ssh $VPS_USER@$VPS_HOST << 'ENDSSH'
     
     # Ajustar permisos
     echo -e "${BLUE}🔐 Ajustando permisos...${NC}"
-    chown -R www-data:www-data $VPS_PATH
-    find $VPS_PATH -type d -exec chmod 755 {} \;
+    chmod -R 755 $VPS_PATH
     find $VPS_PATH -type f -exec chmod 644 {} \;
     
     echo -e "${GREEN}✅ Deploy completado exitosamente!${NC}"
