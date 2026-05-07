@@ -1,0 +1,19 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/reset-password.html", "destination": "/reset-password", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/reset-password", "destination": "/reset-password.html" }
+  ],
+  "headers": [
+    {
+      "source": "/reset-password",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    }
+  ]
+}
